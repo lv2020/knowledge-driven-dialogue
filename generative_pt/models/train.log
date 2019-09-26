@@ -1,0 +1,162 @@
+KnowledgeSeq2Seq(
+  (encoder): RNNEncoder(
+    (embedder): Embedder(2132, 300, padding_idx=0)
+    (rnn): GRU(300, 400, batch_first=True, bidirectional=True)
+  )
+  (bridge): Sequential(
+    (0): Linear(in_features=800, out_features=800, bias=True)
+    (1): Tanh()
+  )
+  (knowledge_encoder): RNNEncoder(
+    (embedder): Embedder(2132, 300, padding_idx=0)
+    (rnn): GRU(300, 400, batch_first=True, bidirectional=True)
+  )
+  (prior_attention): Attention(800, 800, mode='dot')
+  (posterior_attention): Attention(800, 800, mode='dot')
+  (decoder): RNNDecoder(
+    (embedder): Embedder(2132, 300, padding_idx=0)
+    (attention): Attention(800, 800, mode='dot')
+    (rnn): GRU(1100, 800, batch_first=True)
+    (cue_rnn): GRU(1600, 800, batch_first=True)
+    (fc1): Linear(in_features=800, out_features=800, bias=True)
+    (fc2): Linear(in_features=800, out_features=800, bias=True)
+    (fc3): Linear(in_features=1600, out_features=1, bias=True)
+    (tanh): Tanh()
+    (sigmoid): Sigmoid()
+    (output_layer): Sequential(
+      (0): Dropout(p=0.3)
+      (1): Linear(in_features=1600, out_features=800, bias=True)
+      (2): Linear(in_features=800, out_features=2132, bias=True)
+      (3): LogSoftmax()
+    )
+  )
+  (log_softmax): LogSoftmax()
+  (softmax): Softmax()
+  (sigmoid): Sigmoid()
+  (softplus): Softplus(beta=1, threshold=20)
+  (bow_output_layer): Sequential(
+    (0): Linear(in_features=800, out_features=800, bias=True)
+    (1): Tanh()
+    (2): Linear(in_features=800, out_features=2132, bias=True)
+    (3): LogSoftmax()
+  )
+  (nll_loss): NLLLoss()
+  (kl_loss): KLDivLoss()
+)
+Number of parameters: 21599865
+
+Training starts ...
+KnowledgeSeq2Seq(
+  (encoder): RNNEncoder(
+    (embedder): Embedder(2132, 300, padding_idx=0)
+    (rnn): GRU(300, 400, batch_first=True, bidirectional=True)
+  )
+  (bridge): Sequential(
+    (0): Linear(in_features=800, out_features=800, bias=True)
+    (1): Tanh()
+  )
+  (knowledge_encoder): RNNEncoder(
+    (embedder): Embedder(2132, 300, padding_idx=0)
+    (rnn): GRU(300, 400, batch_first=True, bidirectional=True)
+  )
+  (prior_attention): Attention(800, 800, mode='dot')
+  (posterior_attention): Attention(800, 800, mode='dot')
+  (decoder): RNNDecoder(
+    (embedder): Embedder(2132, 300, padding_idx=0)
+    (attention): Attention(800, 800, mode='dot')
+    (rnn): GRU(1100, 800, batch_first=True)
+    (cue_rnn): GRU(1600, 800, batch_first=True)
+    (fc1): Linear(in_features=800, out_features=800, bias=True)
+    (fc2): Linear(in_features=800, out_features=800, bias=True)
+    (fc3): Linear(in_features=1600, out_features=1, bias=True)
+    (tanh): Tanh()
+    (sigmoid): Sigmoid()
+    (output_layer): Sequential(
+      (0): Dropout(p=0.3)
+      (1): Linear(in_features=1600, out_features=800, bias=True)
+      (2): Linear(in_features=800, out_features=2132, bias=True)
+      (3): LogSoftmax()
+    )
+  )
+  (log_softmax): LogSoftmax()
+  (softmax): Softmax()
+  (sigmoid): Sigmoid()
+  (softplus): Softplus(beta=1, threshold=20)
+  (bow_output_layer): Sequential(
+    (0): Linear(in_features=800, out_features=800, bias=True)
+    (1): Tanh()
+    (2): Linear(in_features=800, out_features=2132, bias=True)
+    (3): LogSoftmax()
+  )
+  (nll_loss): NLLLoss()
+  (kl_loss): KLDivLoss()
+)
+Number of parameters: 21599865
+
+Training starts ...
+KnowledgeSeq2Seq(
+  (encoder): RNNEncoder(
+    (embedder): Embedder(2132, 300, padding_idx=0)
+    (rnn): GRU(300, 400, batch_first=True, bidirectional=True)
+  )
+  (bridge): Sequential(
+    (0): Linear(in_features=800, out_features=800, bias=True)
+    (1): Tanh()
+  )
+  (knowledge_encoder): RNNEncoder(
+    (embedder): Embedder(2132, 300, padding_idx=0)
+    (rnn): GRU(300, 400, batch_first=True, bidirectional=True)
+  )
+  (prior_attention): Attention(800, 800, mode='dot')
+  (posterior_attention): Attention(800, 800, mode='dot')
+  (decoder): RNNDecoder(
+    (embedder): Embedder(2132, 300, padding_idx=0)
+    (attention): Attention(800, 800, mode='dot')
+    (rnn): GRU(1100, 800, batch_first=True)
+    (cue_rnn): GRU(1600, 800, batch_first=True)
+    (fc1): Linear(in_features=800, out_features=800, bias=True)
+    (fc2): Linear(in_features=800, out_features=800, bias=True)
+    (fc3): Linear(in_features=1600, out_features=1, bias=True)
+    (tanh): Tanh()
+    (sigmoid): Sigmoid()
+    (output_layer): Sequential(
+      (0): Dropout(p=0.3)
+      (1): Linear(in_features=1600, out_features=800, bias=True)
+      (2): Linear(in_features=800, out_features=2132, bias=True)
+      (3): LogSoftmax()
+    )
+  )
+  (log_softmax): LogSoftmax()
+  (softmax): Softmax()
+  (sigmoid): Sigmoid()
+  (softplus): Softplus(beta=1, threshold=20)
+  (bow_output_layer): Sequential(
+    (0): Linear(in_features=800, out_features=800, bias=True)
+    (1): Tanh()
+    (2): Linear(in_features=800, out_features=2132, bias=True)
+    (3): LogSoftmax()
+  )
+  (nll_loss): NLLLoss()
+  (kl_loss): KLDivLoss()
+)
+Number of parameters: 21599865
+
+Training starts ...
+NLL-103.679   NLL_PPL-2139.819   ACC-0.000   KL-0.150   BOW-103.662   LOSS-207.492
+
+=====================================================================================
+================================== Model Training ===================================
+=====================================================================================
+
+Generation starts ...
+Avg_Len-30.000   Bleu-0.0022/0.0019   Inter_Dist-0.0009/0.0087
+Target:   AVG_LEN-12.520   Inter_Dist-0.0118/0.1496
+Saved model state to './models/state_epoch_1.model'
+Saved train state to './models/state_epoch_1.train'
+
+
+=====================================================================================
+================================== Model Training ===================================
+=====================================================================================
+
+Generation starts ...
