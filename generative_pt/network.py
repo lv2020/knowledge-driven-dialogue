@@ -110,8 +110,7 @@ def main():
         config.save_dir = "./tmp/"
     config.use_gpu = torch.cuda.is_available() and config.gpu >= 0
     device = config.gpu
-    device=-1
-    torch.cuda.set_device(-1)
+    torch.cuda.set_device(device)
     # Data definition
     corpus = KnowledgeCorpus(data_dir=config.data_dir, data_prefix=config.data_prefix,
                              min_freq=0, max_vocab_size=config.max_vocab_size,
