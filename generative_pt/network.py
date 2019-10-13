@@ -62,7 +62,7 @@ def model_config():
     train_arg.add_argument("--lr", type=float, default=0.00005)
     train_arg.add_argument("--grad_clip", type=float, default=5.0)
     train_arg.add_argument("--dropout", type=float, default=0.3)
-    train_arg.add_argument("--num_epochs", type=int, default=1)
+    train_arg.add_argument("--num_epochs", type=int, default=30)
     train_arg.add_argument("--pretrain_epoch", type=int, default=5)
     train_arg.add_argument("--lr_decay", type=float, default=None)
     train_arg.add_argument("--use_embed", type=str2bool, default=True)
