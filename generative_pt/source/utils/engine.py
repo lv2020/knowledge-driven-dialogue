@@ -365,6 +365,7 @@ def evaluate_generation(generator,
     if verbos:
         print(message)
     else:
+        print(message)
         return message
 
 
