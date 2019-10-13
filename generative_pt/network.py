@@ -206,7 +206,7 @@ def main():
         logger.info("Training done!")
         # Test
         logger.info("")
-        trainer.load(os.path.join(config.save_dir, "state_epoch_20"))
+        trainer.load(os.path.join(config.save_dir, "state_epoch_1"))
         logger.info("Testing starts ...")
         metrics, scores = evaluate(model, test_iter)
         logger.info(metrics.report_cum())
