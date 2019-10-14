@@ -10,10 +10,14 @@ File: conversation_server.py
 """
  
 import sys
+sys.path.append('/root/chat_bot/knowledge-driven-dialogue/generative_pt/')
+import os
+os.chdir('/root/chat_bot/knowledge-driven-dialogue/generative_pt/')
 import socket
 from _thread import start_new_thread
 from tools.conversation_strategy import load
 from tools.conversation_strategy import predict
+
  
 
 SERVER_IP = "127.0.0.1"
