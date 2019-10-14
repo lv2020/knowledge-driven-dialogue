@@ -90,7 +90,7 @@ def model_config():
     misc_arg.add_argument("--valid_steps", type=int, default=200)
     misc_arg.add_argument("--batch_size", type=int, default=128)
     #misc_arg.add_argument("--ckpt", type=str)
-    misc_arg.add_argument("--ckpt", type=str, default="models/state_epoch_30.model")
+    misc_arg.add_argument("--ckpt", type=str, default="models/state_epoch_30")
     misc_arg.add_argument("--check", action="store_true")
     misc_arg.add_argument("--test", action="store_true")
     misc_arg.add_argument("--interact", action="store_true")
