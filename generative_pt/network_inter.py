@@ -73,7 +73,7 @@ def model_config():
     train_arg.add_argument("--use_kd", type=str2bool, default=False)
     train_arg.add_argument("--weight_control", type=str2bool, default=False)
     train_arg.add_argument("--decode_concat", type=str2bool, default=False)
-    train_arg.add_argument("--use_posterior", type=str2bool, default=True)
+    train_arg.add_argument("--use_posterior", type=str2bool, default=False)
 
     # Geneation
     gen_arg = parser.add_argument_group("Generation")
