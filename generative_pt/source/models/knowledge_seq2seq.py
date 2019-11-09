@@ -166,7 +166,6 @@ class KnowledgeSeq2Seq(BaseModel):
                 indexs.view(-1, 1, 1).repeat(1, 1, cue_outputs.size(-1)))
         else:
             knowledge = weighted_cue
-        self.use_posterior=False
         if self.use_posterior:
             tgt_enc_inputs = inputs.tgt[0][:, 1:-1], inputs.tgt[1]-2
             _, tgt_enc_hidden = self.knowledge_encoder(tgt_enc_inputs, hidden)
