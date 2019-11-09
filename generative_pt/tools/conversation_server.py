@@ -25,9 +25,8 @@ def main():
     print("loading model...")
     model = load()
     print("load model success !")
-    print(sys.argv)
     logstr=''
-    for line in open(sys.argv[1]):
+    for line in open('/root/knowledge-driven-dialogue/generative_pt/tools/sample.txt'):
         param = line.strip()
         logstr += "\tparam:" + param 
         if param is not None:
