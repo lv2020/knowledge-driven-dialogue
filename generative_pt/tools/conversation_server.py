@@ -42,25 +42,18 @@ print("load model success !")
 
 print("start conversation server success !")
 
-def clientthread(conn, addr):
-    """
-    client thread
-    """
-    logstr = "addr:" + addr[0]+ "_" + str(addr[1])
-    try:
-        #Receiving from client
-        param = conn.recv(4096).decode()
+def main():
+
+    for line in open(sys.argv[1]):
+        param = line.strip()
         logstr += "\tparam:" + param 
         if param is not None:
             response = predict(model, param.strip())
             logstr += "\tresponse:" + response 
-            conn.sendall(response.encode())
-        conn.close()
         print(logstr + "\n")
-    except Exception as e:
-        print(logstr + "\n", e)
 
-while True:
-    conn, addr = s.accept()
-    start_new_thread(clientthread, (conn, addr))
-s.close()
+if __name__ == '__main__':
+    try:
+        main()
+    except KeyboardInterrupt:
+        print("\nExited from the program ealier!")

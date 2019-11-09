@@ -12,7 +12,7 @@ File: conversation_strategy.py
 import sys
 
 sys.path.append("../")
-import network
+import network_inter
 from tools.convert_conversation_corpus_to_model_text import preprocessing_for_one_conversation
 
 def load():
@@ -24,6 +24,12 @@ def load():
 
 def predict(generator, text):
     """
+    Args:
+        generator: 生成器
+        text: 
+    Return:
+        response:
+        
     predict
     """
     model_text, topic_dict = \

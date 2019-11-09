@@ -62,7 +62,7 @@ def model_config():
     train_arg.add_argument("--lr", type=float, default=0.00005)
     train_arg.add_argument("--grad_clip", type=float, default=5.0)
     train_arg.add_argument("--dropout", type=float, default=0.3)
-    train_arg.add_argument("--num_epochs", type=int, default=100)
+    train_arg.add_argument("--num_epochs", type=int, default=30)
     train_arg.add_argument("--pretrain_epoch", type=int, default=5)
     train_arg.add_argument("--lr_decay", type=float, default=None)
     train_arg.add_argument("--use_embed", type=str2bool, default=True)
@@ -89,12 +89,12 @@ def model_config():
     misc_arg.add_argument("--log_steps", type=int, default=100)
     misc_arg.add_argument("--valid_steps", type=int, default=200)
     misc_arg.add_argument("--batch_size", type=int, default=128)
-    misc_arg.add_argument("--ckpt", type=str)
-    #misc_arg.add_argument("--ckpt", type=str, default="models/state_epoch_30")
+    #misc_arg.add_argument("--ckpt", type=str)
+    misc_arg.add_argument("--ckpt", type=str, default="models/state_epoch_30.model")
     misc_arg.add_argument("--check", action="store_true")
     misc_arg.add_argument("--test", action="store_true")
-    misc_arg.add_argument("--interact", action="store_true")
-    #misc_arg.add_argument("--interact", type=str2bool, default=True)
+    #misc_arg.add_argument("--interact", action="store_true")
+    misc_arg.add_argument("--interact", type=str2bool, default=True)
 
     config = parser.parse_args()
 
@@ -148,6 +148,11 @@ def main():
                               max_length=config.max_dec_len, ignore_unk=config.ignore_unk, 
 			      length_average=config.length_average, use_gpu=config.use_gpu)
     # Interactive generation testing
+    config.interact=1
+    if config.interact:
+        print('*'*30+'working'+'*'*30)
+    if config.ckpt:
+        print('-'*30+'ending'+'-'*30)
     if config.interact and config.ckpt:
         model.load(config.ckpt)
         return generator
@@ -194,7 +199,6 @@ def main():
         logger.info(model)
         # Train
         logger.info("Training starts ...")
-        logger.info(config.num_epochs)
         trainer = Trainer(model=model, optimizer=optimizer, train_iter=train_iter,
                           valid_iter=valid_iter, logger=logger, generator=generator,
                           valid_metric_name="-loss", num_epochs=config.num_epochs,

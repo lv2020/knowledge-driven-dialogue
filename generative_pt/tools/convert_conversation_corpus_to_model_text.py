@@ -17,6 +17,19 @@ import collections
 def preprocessing_for_one_conversation(text,
                                        topic_generalization=False):
     """
+    Args:
+        text:[dict]
+            1. goal:
+            2. knowledge:
+            3. history:
+            4. response: 
+        topic_generalization:
+
+    Return:
+        model_text:
+        topic_dict:
+
+
     preprocessing_for_one_conversation
     """
     conversation = json.loads(text.strip(), encoding="utf-8", \
@@ -99,3 +112,7 @@ if __name__ == '__main__':
         main()
     except KeyboardInterrupt:
         print("\nExited from the program ealier!")
+
+
+
+
