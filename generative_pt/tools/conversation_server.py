@@ -28,6 +28,7 @@ def main():
     
     for line in open('/root/knowledge-driven-dialogue/generative_pt/tools/sample.txt'):
         param = line.strip()
+        logstr=''
         logstr += "\tparam:" + param 
         if param is not None:
             response = predict(model, param.strip())
