@@ -8,8 +8,9 @@
 """
 File: conversation_server.py
 """
- 
+
 import sys
+
 sys.path.append('/root/knowledge-driven-dialogue/generative_pt/')
 import os
 os.chdir('/root/knowledge-driven-dialogue/generative_pt/')
@@ -24,7 +25,8 @@ def main():
     print("loading model...")
     model = load()
     print("load model success !")
-
+    print(sys.argv)
+    logstr=''
     for line in open(sys.argv[1]):
         param = line.strip()
         logstr += "\tparam:" + param 
