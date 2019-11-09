@@ -193,8 +193,7 @@ def main():
         print("Saved params to '{}'".format(params_file))
         logger.info(model)
         # Train
-        logger.info("Training starts ...")
-        logger.info(config.num_epochs)
+        logger.info("Training starts ..."+str(config.num_epochs))
         trainer = Trainer(model=model, optimizer=optimizer, train_iter=train_iter,
                           valid_iter=valid_iter, logger=logger, generator=generator,
                           valid_metric_name="-loss", num_epochs=config.num_epochs,
@@ -207,7 +206,7 @@ def main():
         logger.info("Training done!")
         # Test
         logger.info("")
-        trainer.load(os.path.join(config.save_dir, "state_epoch_1"))
+        trainer.load(os.path.join(config.save_dir, "state_epoch_50"))
         logger.info("Testing starts ...")
         metrics, scores = evaluate(model, test_iter)
         logger.info(metrics.report_cum())
