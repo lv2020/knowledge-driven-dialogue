@@ -19,7 +19,7 @@ def load():
     """
     load model
     """
-    return network.main()
+    return network_inter.main()
 
 
 def predict(generator, text):
