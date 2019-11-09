@@ -5,6 +5,7 @@
 #
 ################################################################################
 
+EPOCH=$1
 # set gpu id to use
 export CUDA_VISIBLE_DEVICES=0
 
@@ -55,4 +56,4 @@ done
 cp ${datapath}/${prefix}.dev ${datapath}/${prefix}.test
 
 # step 4: train model, you can find the model file in ./models/ after training
-${pythonpath} ./network.py --gpu 0 > log.txt
+${pythonpath} ./network.py --num_epochs ${EPOCH} --gpu 0 > log.txt
