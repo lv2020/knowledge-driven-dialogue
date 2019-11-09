@@ -25,14 +25,14 @@ def main():
     print("loading model...")
     model = load()
     print("load model success !")
-    logstr=''
+    
     for line in open('/root/knowledge-driven-dialogue/generative_pt/tools/sample.txt'):
         param = line.strip()
         logstr += "\tparam:" + param 
         if param is not None:
             response = predict(model, param.strip())
             logstr += "\tresponse:" + response 
-        print(logstr + "\n")
+        print(response)
 
 if __name__ == '__main__':
     try:
